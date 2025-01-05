@@ -5,17 +5,28 @@
 * {
     font-family: Circular;
     margin: 0;
-    background-color: rgb(233, 230, 225);
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(254, 249, 241);
+    text-decoration: none;
+    color: inherit;
 }
-#header {
+
+#header{
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 100px;
-    padding-left: 7px;
-    padding-right: 7px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid rgb(237, 233, 227);
+
+}
+#logo a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 #logo ul{ 
     display: flex;
@@ -23,8 +34,6 @@
     justify-content:start;
     margin: 0;
     padding: 0;
-    border: 1.5px solid black;
-    border-radius: 3px;
     width: 256px;
 }
 #logo img{
@@ -42,13 +51,10 @@
     list-style: none;
     display: flex;
     justify-content: end;
-    gap: 15px;
+    gap: 20px;
     font-family: "Montserrat", serif;
-    margin-top: 16px;
+    padding-right: 20px;
 }
-
-
-
 
 #restaurant-card {
     display: flex;
@@ -181,4 +187,65 @@ div.box-in4{
     width: 45px;
     top: 95%;
     left: 50%;
+}
+.search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 2px;
+}
+.search-txt{
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 45px;
+    background-color: whitesmoke;
+}
+.search-btn {
+height: 40px;
+width: 40px;
+}
+.menu-body {
+
+}
+.overview {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px;
+    padding-top: 30px;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+.overview-header{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+}
+.overview>img {
+    width: 200px;
+    border-radius: 20px;
+}
+.overview-header #over-cuisine {
+    font-size: 19;
+    font-weight: 500;
+    color: #4a4949;
+}
+.overview-header #address {
+    font-size: 16;
+    color: #8e8e8e;
+
+}
+.over-rating{
+    display: flex;
+    gap: 10px;
+}
+#star-rating{
+    display: flex;
+    gap: 2px;
+    align-items :center;
 }
