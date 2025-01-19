@@ -1,25 +1,28 @@
 import { Link } from "react-router";
 import cart from "../assets/cart.svg";
-import logo from "../assets/Logo.png";
-import { useState } from "react";
-// import { Link } from "react-router";
+import logo from "../assets/Logo2.png";
+import { useState, useContext } from "react";
+import UserContext from "../utils.js/UserContext";
+import useOnline from "../utils.js/useOnline";
 
 
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const { user } = useContext(UserContext);
+    if (!useOnline()) return <h1>🟥 Please check your internet connections!</h1>
     
     return (
-        <div id = "header">
+        <div className = "flex justify-between h-20 items-center font-fontall bg-gray-200 sticky z-50 top-0 right-0 left-0">
             
-            <div id = "logo">
-                <ul>
-                    <li><a href="/" ><img src={logo} alt="Logo"></img></a></li>
-                    <li><a href="/" ><h1>🇿‌🇮‌🇬‌🇬‌🇾‌</h1></a></li>
-                </ul>
+            <div className = "ml-3 p-10" >
+                <a href="/">
+                <img  className="w-[120px] rounded-2xl border-[1.5px] border-black " src={logo} ></img>
+                </a>
+                
             </div>
-            <div id = "nav-items">
-                <ul>
+            <div >
+                <ul className="flex gap-[20px] pr-5 ">
                     <li><Link to = "/home"><h2>Home</h2></Link></li>
                     <li><Link to = "/about"><h2>About</h2></Link></li>
                     <li><Link to = "/contact"><h2>Contact</h2></Link></li>
