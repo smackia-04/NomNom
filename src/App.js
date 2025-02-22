@@ -9,22 +9,24 @@ import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 import Error from "./components/Error.js";
-import Home from "./components/Home.js";
 import Contact from "./components/Contact.js";
 import RestaurantMenu from "./components/RestaurantMenu.js";
 import Profile from "./components/Profile.js";
 import Shimmer from "./components/Shimmer.js";
+import { Provider } from "react-redux";
+import store from "./utils.js/store.js";
 
 const About = lazy(() => import("./components/About.js"))
+const Cart = lazy(() => import("./components/Cart.js"))
 
 
 const AppLayout = () => {
     return (
-        <>
+        <Provider store = {store}>
         <Header />
         <Outlet />
         <Footer />
-        </>
+        </Provider>
     )
 }
 
@@ -45,12 +47,16 @@ const appRouter = createBrowserRouter([
                 ]
             },
             {
-                path : "home",
-                element : <Home />,
+                path : "/",
+                element : <Body />,
             },
             {
                 path : "contact",
                 element : <Contact />,
+            },
+            {
+                path : "/cart",
+                element : <Suspense fallback = {<Shimmer />}> <Cart /> </Suspense>,
             },
             {
                 path : "/",

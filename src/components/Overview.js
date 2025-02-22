@@ -5,7 +5,7 @@ import star from "../assets/star2.svg"
 const Overview = (data) => {
 
     return(
-        <div className="flex justify-between items-center ml-12 mr-8 p-3  border-b-2 ">
+        <div className="flex justify-between items-center ml-12 mr-8 p-3 mt-3 border-b-2 ">
             <div className="flex flex-col ">
                 <h1 className="text-[40px] text-gray-900 ">{data?.name}</h1>
                 <p className="font-extralight text-lg text-blue-gray-900 ">{data?.cuisines?.join(", ")}</p>
@@ -21,7 +21,7 @@ const Overview = (data) => {
                 </div>
                 <p>{data?.deliveryTime}</p>
             </div>
-            <img className="w-[200px] rounded-xl " src = {IMG_CDN_LINK + data?.cloudinaryImageId}></img>
+            <img className="size-[220px]  rounded-xl " src = {IMG_CDN_LINK + data?.cloudinaryImageId}></img>
         </div>
     );
 };

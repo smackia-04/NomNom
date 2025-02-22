@@ -1,12 +1,22 @@
 import { useContext } from "react";
 import UserContext from "../utils.js/UserContext";
+import logo from "../assets/Logo2.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     const {user} = useContext(UserContext);
     return (
-        <div className="bg-gray-200 border-t-[1px] border-gray-300 Circular pl-12 p-3 pr-5 bottom-0 left-0 right-0 font-fontall " >
-            <h1 className="text-4xl font-medium " >- nomnom</h1>
-            <h5 className="text-sm" >This site is developed by - {user.name} | {user.email}.</h5>
+        <div className="border-t-[1px] border-gray-300 bg-gray-200  mt-20 font-fontall">
+            <div className="font-extrabold text-gray-700 text-4xl h-[180px] p-3 pl-12 pr-8 flex items-center">
+                <h1>For better experience, download the app now</h1>
+            </div>
+            <div className="bg-black text-white p-3 pl-12 pr-8  " >
+                <div className="flex">
+                    <img  className="w-[180px] rounded-2xl border-[1.5px] border-black " src={logo} ></img>
+                </div>
+                    <h5 className="text-sm p-16 flex justify-center" >© 2025  Made with  by  <FontAwesomeIcon icon={faHeart} beat style={{color: "#e30d0d",}} />  {user.name} | {user.email}</h5>
+            </div>
         </div>
     )
 }

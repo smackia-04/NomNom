@@ -1,5 +1,5 @@
 {
-  "name": "ziggy",
+  "name": "nomnom",
   "version": "1.0.0",
   "description": "This is a food ordering app",
   "scripts": {
@@ -10,8 +10,14 @@
   "author": "Ansh Bhargava",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
+    "babel-jest": "^29.7.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.13.3",
     "postcss": "^8.4.49",
     "process": "^0.11.10",
@@ -19,9 +25,17 @@
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@material-tailwind/react": "^2.1.10",
+    "@reduxjs/toolkit": "^2.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
     "react-router": "^7.1.1"
   },
   "browserslist": [

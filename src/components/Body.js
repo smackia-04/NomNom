@@ -5,7 +5,6 @@ import { filterData } from "../utils.js/helper.js"
 import searchLogo from "../assets/searchLogo.svg"
 import { Link } from "react-router";
 import { FETCH_RESTAURANTS_URL } from "../utils.js/constants.js";
-import useOnline from "../utils.js/useOnline.js";
 
 
 
@@ -27,7 +26,7 @@ const Body = () => {
 
 
     return (allRestaurant?.length == 0) ? <Shimmer /> : (
-        <div className="body bg-gray-50 font-fontall">
+        <div className="body bg-gray-50 font-fontall mb-5">
             <div className="flex flex-wrap justify-center items-center gap-[2px] p-3 " id="search">
                 <input
                     type="search"

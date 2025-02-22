@@ -1,17 +1,18 @@
 import { Link } from "react-router";
-import cart from "../assets/cart.svg";
 import logo from "../assets/Logo2.png";
-import { useState, useContext } from "react";
-import UserContext from "../utils.js/UserContext";
+import { useState } from "react";
 import useOnline from "../utils.js/useOnline";
+import { useSelector } from "react-redux";
+import { Cart_Logo } from "../utils.js/helper"
 
 
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { user } = useContext(UserContext);
     if (!useOnline()) return <h1>🟥 Please check your internet connections!</h1>
-    
+
+    const cartItems = useSelector((store) => store.cart.items);
+
     return (
         <div className = "flex justify-between h-20 items-center font-fontall bg-gray-200 sticky z-50 top-0 right-0 left-0">
             
@@ -21,9 +22,10 @@ const Header = () => {
                 </a>
                 
             </div>
+            
             <div >
-                <ul className="flex gap-[20px] pr-5 ">
-                    <li><Link to = "/home"><h2>Home</h2></Link></li>
+                <ul className="flex gap-[20px] items-center pr-5 ">
+                    <li><Link to = "/"><h2>Home</h2></Link></li>
                     <li><Link to = "/about"><h2>About</h2></Link></li>
                     <li><Link to = "/contact"><h2>Contact</h2></Link></li>
                     <li> {
@@ -31,7 +33,7 @@ const Header = () => {
                     <button onClick={() => setIsLoggedIn(true)}><h2>Log In</h2></button>
                     }
                     </li>
-                    <li><img src={cart}></img></li>
+                    <li><Link to = "/cart" >< Cart_Logo length = {cartItems.length} {...cartItems} /></Link></li>
                 </ul>
             </div>
         </div>
