@@ -23,4 +23,4 @@ This is a Learning based project on React.js. This react app is built using the 
 - Entire Backend
 
 ## 🚀 Live Demo
-> Live Website Preview : [NomNom](www.google.com)
+> Live Website Preview : [NomNom](https://nom-nom-five.vercel.app/)
