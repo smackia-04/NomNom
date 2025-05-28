@@ -9,14 +9,13 @@ import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 import Error from "./components/Error.js";
-import Contact from "./components/Contact.js";
+import SignIn from "./components/SignIn.js"
+import Help from "./components/Help.js";
 import RestaurantMenu from "./components/RestaurantMenu.js";
-import Profile from "./components/Profile.js";
 import Shimmer from "./components/Shimmer.js";
 import { Provider } from "react-redux";
 import store from "./utils.js/store.js";
 
-const About = lazy(() => import("./components/About.js"))
 const Cart = lazy(() => import("./components/Cart.js"))
 
 
@@ -37,30 +36,20 @@ const appRouter = createBrowserRouter([
         errorElement : <Error />,
         children : [
             {
-                path : "about",
-                element : <Suspense fallback = {<Shimmer/ >}><About /></Suspense>,
-                children : [
-                    {
-                        path : "profile",
-                        element : <Profile />
-                    }
-                ]
+                path : "help",
+                element : <Help />,
             },
             {
                 path : "/",
                 element : <Body />,
             },
             {
-                path : "contact",
-                element : <Contact />,
+                path : "signin",
+                element : <SignIn />,
             },
             {
                 path : "/cart",
                 element : <Suspense fallback = {<Shimmer />}> <Cart /> </Suspense>,
-            },
-            {
-                path : "/",
-                element : <Body />
             },
             {
                 path : "/restaurant/:restaurantId",
