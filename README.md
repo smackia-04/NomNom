@@ -16,6 +16,11 @@ This is a Learning based project on React.js. This react app is built using the 
 - Code Splitting & Lazy Loading
 - Custom Hook
 - Shimmer UI
-  
+## More Features to be added
+- Location service
+- Authentication
+- Promotions and Offers
+- Entire Backend
+
 ## 🚀 Live Demo
 > Live Website Preview : [NomNom](www.google.com)
